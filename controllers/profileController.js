@@ -8,7 +8,7 @@ exports.getProfile = async (req, res) => {
     // Your profile data
     const profile = {
       name: "Bamidele Oriku",
-      github: "https://github.com/your-github-username",
+      github: "https://github.com/Bamidele123456/NGN",
       email: "bamideleprecious85@gmail.com",
       bio: "Backend Developer passionate about building scalable systems.",
       cat_fact: catFact,
