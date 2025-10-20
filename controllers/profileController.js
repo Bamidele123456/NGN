@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-export const getProfile = async (req, res) => {
+exports.getProfile = async (req, res) => {
   try {
     const { data } = await axios.get("https://catfact.ninja/fact");
 
