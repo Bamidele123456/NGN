@@ -1,22 +1,27 @@
 const axios = require("axios");
 
-exports.getProfile = async (req, res) => {
+export const getProfile = async (req, res) => {
   try {
-    const response = await axios.get("https://catfact.ninja/fact");
-    const catFact = response.data.fact;
+    const { data } = await axios.get("https://catfact.ninja/fact");
 
-    // Your profile data
-    const profile = {
-      name: "Bamidele Oriku",
-      github: "https://github.com/Bamidele123456/NGN",
-      email: "bamideleprecious85@gmail.com",
-      bio: "Backend Developer passionate about building scalable systems.",
-      cat_fact: catFact,
+  
+    const response = {
+      status: "success",
+      user: {
+        name: "Bamidele Oriku",
+        email: "bamideleprecious85@gmail.com", 
+        stack: "Python/Flask,JavaScript/Nodejs,C#/ASP.NET",
+      },
+      timestamp: new Date().toISOString(),
+      fact: data.fact
     };
 
-    res.json(profile);
+    res.status(200).json(response);
   } catch (error) {
-    console.error(error.message);
-    res.status(500).json({ error: "Failed to fetch cat fact." });
+    res.status(500).json({
+      status: "error",
+      message: "Something went wrong while fetching the cat fact."
+    });
   }
 };
+
