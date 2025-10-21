@@ -1,6 +1,6 @@
 # Elev8 Stage 0 API
 
-This is my Elev8 Stage 0 submission built with Node.js and Express.
+This is my Elev8 Stage 0 submission built with Node.js and Express .
 
 ## Endpoint
 
