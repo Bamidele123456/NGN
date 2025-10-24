@@ -72,3 +72,17 @@ exports.deleteString = (req, res) => {
   stringsDB.delete(entry[0]);
   res.status(204).send();
 };
+
+exports.filterByNaturalLanguage = (req, res) => {
+  const query = (req.query.query || "").toLowerCase();
+  const results = [];
+
+  for (const [key, value] of stringsDB.entries()) {
+    if (value.value.toLowerCase().includes(query)) {
+      results.push(value);
+    }
+  }
+
+  res.status(200).json({ results });
+};
+
