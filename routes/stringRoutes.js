@@ -13,7 +13,7 @@ router.get("/:string_value", getString);
 router.delete("/:string_value", deleteString);
 router.delete("/clear", (req, res) => {
   stringsDB.clear();
-  res.status(200).json({ message: "Database cleared" });
+  res.status(200).json({ message: "Database cleared for now" });
 });
 
 module.exports = router;
